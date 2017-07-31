@@ -7,14 +7,13 @@
 
 #include "Particle.h"
 #include <stdlib.h>
+#include <math.h>
 namespace monitor {
 
-Particle::Particle() {
-	m_x = ((2.0 * rand()) / RAND_MAX) - 1;
-	m_y = ((2.0 * rand()) / RAND_MAX) - 1;
-
-	x_speed = 0.001*((2.0*rand()/RAND_MAX) -1);
-	y_speed = 0.001*((2.0*rand()/RAND_MAX) -1);
+Particle::Particle() :
+		m_x(0), m_y(0) {
+	m_direction = (2 * M_PI * rand()) / RAND_MAX;
+	m_speed = (0.000001 * rand())/RAND_MAX;
 
 }
 
@@ -22,20 +21,14 @@ Particle::~Particle() {
 
 }
 
-void Particle::update() {
+void Particle::update(int interval) {
 
-	m_x += x_speed;
-	m_y += y_speed;
+	double xspeed = m_speed * cos(m_direction);
+	double yspeed = m_speed * sin(m_direction);
 
-	if(m_x <= -1.0 || m_x>=1.0){
-		x_speed = -x_speed;
+	m_x += xspeed*interval;
+	m_y += yspeed*interval;
 
-	}
-
-	if(m_y <= -1.0 || m_y>=1.0){
-			y_speed = -y_speed;
-
-		}
 }
 
 } /* namespace monitor */

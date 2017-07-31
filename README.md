@@ -1,4 +1,4 @@
-Graphical Particel Accelerator made in C++ with open source SDL graphics engine. 
+**Graphical Particel Accelerator made in C++ with open source SDL graphics engine.**
 
 On Linux download libsdl2-dev, the *.h files will be installed in "/usr/include/SDL2". In Projects settings and C/C++ Build -> Settings ->GCC C++ Compiler -> include, add the path to your *h files- In GCC C++ linker -> libraries add "SDL2" to "Libraries". And you are good to go. 
 
