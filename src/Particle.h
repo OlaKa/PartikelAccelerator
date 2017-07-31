@@ -14,8 +14,12 @@ struct Particle {
 	double m_x;
 	double m_y;
 
+	double  x_speed;
+	double  y_speed;
+
 	Particle();
 	virtual ~Particle();
+	void update();
 };
 
 } /* namespace monitor */

@@ -29,6 +29,8 @@ int main() {
 
 	while (true) {
 
+		swarm.update();
+
 		//int val= rand() % 255 + 1;
 		//cout <<val <<endl;
 		int elapsed = SDL_GetTicks();
@@ -57,6 +59,7 @@ int main() {
 		 */
 
 		screen.update();
+		screen.clear();
 
 		if (screen.ProcessEvent() == false) {
 			break;
