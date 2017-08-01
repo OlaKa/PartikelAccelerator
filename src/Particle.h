@@ -22,6 +22,7 @@ struct Particle {
 	Particle();
 	virtual ~Particle();
 	void update(int interval);
+	void init();
 };
 
 } /* namespace monitor */
